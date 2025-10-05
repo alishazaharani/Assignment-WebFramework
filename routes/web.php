@@ -3,40 +3,28 @@
 use Illuminate\Support\Facades\Route;
 
 // Home
-Route::get('/', function () {
-    return view('home'); // resources/views/home.blade.php
+Route::get('/home', function () {
+    return view('assignment/home'); // resources/views/home.blade.php
 });
 
 // About
 Route::get('/about', function () {
-    return view('about'); // resources/views/about.blade.php
+    return view('assignment/about'); // resources/views/about.blade.php
 });
 
-// Program (pakai group + parameter)
-Route::prefix('program')->group(function () {
-    Route::get('/', function () {
-        return view('program'); // resources/views/program.blade.php
+// Program
+Route::get('/program', function () {
+        return view('assignment/program'); // resources/views/program.blade.php
     });
-
-    // contoh parameter → akses: /program/1
-    Route::get('/{id}', function ($id) {
-        return "Detail Program Rooliaglow (Soon).: $id";
-    });
-});
 
 // Our Team
 Route::get('/team', function () {
-    return view('team'); // resources/views/team.blade.php
+    return view('assignment/team'); // resources/views/team.blade.php
 });
 
 // Contact Us
 Route::get('/contact', function () {
-    return view('contact');
-});
-
-// Redirect ke Instagram resmi PT Rooliaglow Growth Group
-Route::get('/instagram', function () {
-    return redirect('https://www.instagram.com/rooliaglow.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==');
+    return view('assignment/contact');
 });
 
 // Fallback → kalau URL salah
